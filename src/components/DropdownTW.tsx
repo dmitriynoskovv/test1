@@ -22,7 +22,6 @@ export const DropdownTW = <T extends string | object>( {
   cn = '',
 }: IDropdownTW<T> ) => {
   const [ isOpen, setIsOpen ] = useState(false)
-  const anchor = 'date-select' + Date.now().toString()
 
   const open = ( e: MouseEvent<HTMLDivElement> ) => {
     e.stopPropagation()
@@ -38,7 +37,7 @@ export const DropdownTW = <T extends string | object>( {
 
   useEffect( () => {
     const hideDropdown = ( event: DocumentEventMap["click"] ) => {
-      const isItDropdown: boolean = !!event.target.closest( `[data-modal=${ anchor }]` )
+      const isItDropdown: boolean = !!event.target?.closest( `[data-modal="dropdown"]` )
       !isItDropdown && setIsOpen( false )
     }
     document.addEventListener( 'click', hideDropdown )
@@ -57,7 +56,7 @@ export const DropdownTW = <T extends string | object>( {
             : displayedKey && selected && selected[ displayedKey ]
           ) || ''
         }
-        data-modal={anchor}
+        data-modal="dropdown"
         placeholder={ placeholder }
         onChange={ () => {} }
         onClick={ open }
