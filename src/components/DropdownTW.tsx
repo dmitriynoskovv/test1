@@ -38,7 +38,7 @@ export const DropdownTW = <T extends string | object>( {
   useEffect( () => {
     const hideDropdown = ( event: DocumentEventMap["click"] ) => {
       const target = event.target as HTMLElement
-      const isItDropdown: boolean = target.closest( `[data-modal="dropdown"]` )
+      const isItDropdown: boolean = !!target.closest( `[data-modal="dropdown"]` )
       !isItDropdown && setIsOpen( false )
     }
     document.addEventListener( 'click', hideDropdown )
