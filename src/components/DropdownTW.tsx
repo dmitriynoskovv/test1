@@ -37,8 +37,8 @@ export const DropdownTW = <T extends string | object>( {
   }
 
   useEffect( () => {
-    const hideDropdown = ( event ) => {
-      const isItDropdown = !!(event.target).closest( `[data-modal=${ anchor }]` )
+    const hideDropdown = ( event: DocumentEventMap["click"] ) => {
+      const isItDropdown: boolean = !!event.target.closest( `[data-modal=${ anchor }]` )
       !isItDropdown && setIsOpen( false )
     }
     document.addEventListener( 'click', hideDropdown )
@@ -57,6 +57,7 @@ export const DropdownTW = <T extends string | object>( {
             : displayedKey && selected && selected[ displayedKey ]
           ) || ''
         }
+        data-modal={anchor}
         placeholder={ placeholder }
         onChange={ () => {} }
         onClick={ open }
