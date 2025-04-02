@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+  --white: #fff;
+  --bg: #0F212F;
+  --bg-light: #1A2C3A;
+  --bg-input: #273744;
+  --bg-button: #1574E0;
+  --border: #0096DC55;
+  --error: #CE3436;
+  --sub-text: #8E8E8E;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-bg-light: var(--bg-light);
+  --color-bg-input: var(--bg-input);
+  --color-bg-button: var(--bg-button);
+  --color-sub: var(--sub-text);
+  --color-border: var(--border);
+  --color-error: var(--error);
+
+  --breakpoint-3xl: 1440px;
+  --breakpoint-2xl: 1100px;
+  --breakpoint-lap: 768px;
+  --breakpoint-xs: 360px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+}
