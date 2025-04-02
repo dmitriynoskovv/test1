@@ -1,6 +1,6 @@
-import React, { FC, useState, MouseEvent, useEffect } from 'react';
+import React, { useState, MouseEvent, useEffect } from 'react';
 
-interface IDropdownTW<T> {
+interface IDropdownTW<T extends string | object> {
   options: T[]
   selected: T | string | null
   onSelect: (value: T) => void
@@ -19,7 +19,7 @@ export const DropdownTW = <T extends string | object>( {
   placeholder = '',
   isDisabled,
   isError,
-  cn = ''
+  cn = '',
 }: IDropdownTW<T> ) => {
   const [ isOpen, setIsOpen ] = useState(false)
   const anchor = 'date-select' + Date.now().toString()

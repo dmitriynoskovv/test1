@@ -10,7 +10,7 @@ import { PATH } from '@/shared/routs';
 
 export default function Home() {
   const [ form, setForm ] = useState<FormType>({ name: '', email: '', description: '', url: '', lvl: null })
-  const [ options, setOptions ] = useState([])
+  const [ options, setOptions ] = useState<string[]>([])
   const [ isError, setIsError ] = useState(false)
   const [ loadingError, setLoadingError ] = useState(false)
 
